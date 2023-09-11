@@ -74,12 +74,10 @@ function App() {
         </label>
         <input type="submit" value="submit" />
       </form>
-      {/* {playerStats["games_played"] !== undefined && (
-        <div>
-          Games Played: {playerStats["games_played"]}
-        </div>
-      )} */}
-      Games Played: {playerStats["pts"]}
+      {/* Games Played: {playerStats["games_played"]} */}
+      {playerStats && Object.keys(playerStats).length > 0 && (
+        <div>Games Played: {playerStats["games_played"]}</div>
+      )}
     </div>
   );
 }
