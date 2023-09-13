@@ -4,12 +4,12 @@ import axios from "axios";
 function App() {
   const [playerName, setPlayerName] = useState("");
   const [playerStats, setPlayerStats] = useState({});
-  const [selectedSeason, setSelectedSeason] = useState('')
+  const [selectedSeason, setSelectedSeason] = useState(new Date().getFullYear()-1)
 
   const years = []
   const currentYear = new Date().getFullYear()
   //descending loop from current year, year represents year in each iteration
-  for(let year = currentYear; year >= 1946; year-- ){
+  for(let year = currentYear -1; year >= 1946; year-- ){
     years.push(year.toString())
   }
 
@@ -100,10 +100,6 @@ function App() {
       </form>
       <br/>
       {/*if playerStats has a value and object has more than 1 property (key) then run code*/}
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>Season: {playerStats["season"]}</div>
-      )}
-      <br/>
       {playerStats && Object.keys(playerStats).length > 0 && (
         <div>Games Played: {playerStats["games_played"]} </div>
       )}
