@@ -6,6 +6,13 @@ function App() {
   const [playerStats, setPlayerStats] = useState({});
   const [selectedSeason, setSelectedSeason] = useState('')
 
+  const years = []
+  const currentYear = new Date().getFullYear()
+  //descending loop from current year, year represents year in each iteration
+  for(let year = currentYear; year >= 1946; year-- ){
+    years.push(year.toString())
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     getPlayerId();
@@ -74,18 +81,22 @@ function App() {
             type="text"
             value={playerName}
             onChange={handleChange}
-            placeholder="Please enter the player's name..."
+            placeholder="Enter player's name..."
           />
         </label>
+        <br/>
         <label>
           Season:
           <select value={selectedSeason} onChange={handleSeasonChange}>
-            <option value="2019">2019</option>
-            <option value="2020">2020</option>
-            
+            {years.map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
           </select>
         </label>
-        <input type="submit" value="Submit" />
+        <br/>
+        <input type="submit" value="Search" />
       </form>
       <br/>
       {/*if playerStats has a value and object has more than 1 property (key) then run code*/}
