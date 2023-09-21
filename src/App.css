@@ -22,3 +22,19 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.gridContainer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gridItem{
+  padding: 7px;
+  border: 2px solid black;
+  background-color: #fc7446;
+}

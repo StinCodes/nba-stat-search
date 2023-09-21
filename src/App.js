@@ -1,18 +1,19 @@
-import './App.css'
+import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
 
 function App() {
   const [playerName, setPlayerName] = useState("");
   const [playerStats, setPlayerStats] = useState({});
-  const [selectedSeason, setSelectedSeason] = useState(new Date().getFullYear()-1)
+  const [selectedSeason, setSelectedSeason] = useState(
+    new Date().getFullYear() - 1
+  );
 
-  const years = []
-  const currentYear = new Date().getFullYear()
+  const years = [];
+  const currentYear = new Date().getFullYear();
   //descending loop from current year, year represents year in each iteration
-  for(let year = currentYear -1; year >= 1946; year-- ){
-    years.push(year.toString())
+  for (let year = currentYear - 1; year >= 1946; year--) {
+    years.push(year.toString());
   }
 
   const handleSubmit = (e) => {
@@ -21,9 +22,9 @@ function App() {
     // console.log(playerName)
   };
 
-  const handleSeasonChange = (e)=>{
-    setSelectedSeason(e.target.value)
-  }
+  const handleSeasonChange = (e) => {
+    setSelectedSeason(e.target.value);
+  };
 
   const handleChange = (e) => {
     //player name needs to have underscore instead of space
@@ -76,9 +77,13 @@ function App() {
 
   return (
     <div className="App">
-      <img src="https://www.freelogodesign.org/manager/logos/732b1f3f663d470e99b9b993847f4def/download/logo_free" alt='nbastatsearchlogo' className='logo'/>
-      <br/>
-      <form onSubmit={handleSubmit} className='playerForm'>
+      <img
+        src="https://www.freelogodesign.org/manager/logos/732b1f3f663d470e99b9b993847f4def/download/logo_free"
+        alt="nbastatsearchlogo"
+        className="logo"
+      />
+      <br />
+      <form onSubmit={handleSubmit} className="playerForm">
         <label>
           Name:
           <input
@@ -88,7 +93,7 @@ function App() {
             placeholder="Enter player's name..."
           />
         </label>
-        <br/>
+        <br />
         <label>
           Season:
           <select value={selectedSeason} onChange={handleSeasonChange}>
@@ -99,51 +104,59 @@ function App() {
             ))}
           </select>
         </label>
-        <br/>
+        <br />
         <input type="submit" value="Search" />
       </form>
-      <br/>
-      {/*if playerStats has a value and object has more than 1 property (key) then run code*/}
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>Games Played: {playerStats["games_played"]} </div>
-      )}
-      <br/>
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>Minutes: {playerStats["min"]} minutes</div>
-      )}
-      <br/>
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>Points: {playerStats["pts"]}</div>
-      )}
-      <br/>
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>Assists: {playerStats["ast"]}</div>
-      )}
-      <br/>
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>Rebounds: {playerStats["reb"]}</div>
-      )}
-      <br/>
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>Turnovers: {playerStats["turnover"]}</div>
-      )}
-      <br/>
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>Field Goal Percentage: {playerStats["fg_pct"]*100 + "%"}</div>
-      )}
-      <br/>
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>3-Point Percentage: {playerStats["fg3_pct"]*100 + "%"}</div>
-      )}
-      <br/>
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>Steals: {playerStats["stl"]}</div>
-      )}
-      <br/>
-      {playerStats && Object.keys(playerStats).length > 0 && (
-        <div>Blocks: {playerStats["blk"]}</div>
-      )}
-      <br/>
+      <br />
+      <div className="gridContainer">
+        {/*if playerStats has a value and object has more than 1 property (key) then run code*/}
+        {playerStats && Object.keys(playerStats).length > 0 && (
+          <div className="gridItem">
+            Games Played: {playerStats["games_played"]}{" "}
+          </div>
+        )}
+        <br />
+        {playerStats && Object.keys(playerStats).length > 0 && (
+          <div className="gridItem">Minutes: {playerStats["min"]} minutes</div>
+        )}
+        <br />
+        {playerStats && Object.keys(playerStats).length > 0 && (
+          <div className="gridItem">Points: {playerStats["pts"]}</div>
+        )}
+        <br />
+        {playerStats && Object.keys(playerStats).length > 0 && (
+          <div className="gridItem">Assists: {playerStats["ast"]}</div>
+        )}
+        <br />
+        {playerStats && Object.keys(playerStats).length > 0 && (
+          <div className="gridItem">Rebounds: {playerStats["reb"]}</div>
+        )}
+        <br />
+        {playerStats && Object.keys(playerStats).length > 0 && (
+          <div className="gridItem">Turnovers: {playerStats["turnover"]}</div>
+        )}
+        <br />
+        {playerStats && Object.keys(playerStats).length > 0 && (
+          <div className="gridItem">
+            Field Goal Percentage: {playerStats["fg_pct"] * 100 + "%"}
+          </div>
+        )}
+        <br />
+        {playerStats && Object.keys(playerStats).length > 0 && (
+          <div className="gridItem">
+            3-Point Percentage: {playerStats["fg3_pct"] * 100 + "%"}
+          </div>
+        )}
+        <br />
+        {playerStats && Object.keys(playerStats).length > 0 && (
+          <div className="gridItem">Steals: {playerStats["stl"]}</div>
+        )}
+        <br />
+        {playerStats && Object.keys(playerStats).length > 0 && (
+          <div className="gridItem">Blocks: {playerStats["blk"]}</div>
+        )}
+        <br />
+      </div>
     </div>
   );
 }
