@@ -76,7 +76,9 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
+      <img src="https://www.freelogodesign.org/manager/logos/732b1f3f663d470e99b9b993847f4def/download/logo_free" alt='nbastatsearchlogo' className='logo'/>
+      <br/>
+      <form onSubmit={handleSubmit} className='playerForm'>
         <label>
           Name:
           <input
