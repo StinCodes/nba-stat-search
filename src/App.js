@@ -111,51 +111,36 @@ function App() {
       <div className="gridContainer">
         {/*if playerStats has a value and object has more than 1 property (key) then run code*/}
         {playerStats && Object.keys(playerStats).length > 0 && (
-          <div className="gridItem">
-            Games Played: {playerStats["games_played"]}{" "}
+          <div className="statCard">
+            <div className="gridItem">
+              Games Played: {playerStats["games_played"]}
+            </div>
+            <br />
+            <div className="gridItem">
+              Minutes: {playerStats["min"]} minutes
+            </div>
+            <br />
+            <div className="gridItem">Points: {playerStats["pts"]}</div>
+            <br />
+            <div className="gridItem">Assists: {playerStats["ast"]}</div>
+            <br />
+            <div className="gridItem">Rebounds: {playerStats["reb"]}</div>
+            <br />
+            <div className="gridItem">Turnovers: {playerStats["turnover"]}</div>
+            <br />
+            <div className="gridItem">
+              Field Goal Percentage: {playerStats["fg_pct"] * 100 + "%"}
+            </div>
+            <br />
+            <div className="gridItem">
+              3-Point Percentage: {playerStats["fg3_pct"] * 100 + "%"}
+            </div>
+            <br />
+            <div className="gridItem">Steals: {playerStats["stl"]}</div>
+            <br />
+            <div className="gridItem">Blocks: {playerStats["blk"]}</div>
           </div>
         )}
-        <br />
-        {playerStats && Object.keys(playerStats).length > 0 && (
-          <div className="gridItem">Minutes: {playerStats["min"]} minutes</div>
-        )}
-        <br />
-        {playerStats && Object.keys(playerStats).length > 0 && (
-          <div className="gridItem">Points: {playerStats["pts"]}</div>
-        )}
-        <br />
-        {playerStats && Object.keys(playerStats).length > 0 && (
-          <div className="gridItem">Assists: {playerStats["ast"]}</div>
-        )}
-        <br />
-        {playerStats && Object.keys(playerStats).length > 0 && (
-          <div className="gridItem">Rebounds: {playerStats["reb"]}</div>
-        )}
-        <br />
-        {playerStats && Object.keys(playerStats).length > 0 && (
-          <div className="gridItem">Turnovers: {playerStats["turnover"]}</div>
-        )}
-        <br />
-        {playerStats && Object.keys(playerStats).length > 0 && (
-          <div className="gridItem">
-            Field Goal Percentage: {playerStats["fg_pct"] * 100 + "%"}
-          </div>
-        )}
-        <br />
-        {playerStats && Object.keys(playerStats).length > 0 && (
-          <div className="gridItem">
-            3-Point Percentage: {playerStats["fg3_pct"] * 100 + "%"}
-          </div>
-        )}
-        <br />
-        {playerStats && Object.keys(playerStats).length > 0 && (
-          <div className="gridItem">Steals: {playerStats["stl"]}</div>
-        )}
-        <br />
-        {playerStats && Object.keys(playerStats).length > 0 && (
-          <div className="gridItem">Blocks: {playerStats["blk"]}</div>
-        )}
-        <br />
       </div>
     </div>
   );
