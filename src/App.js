@@ -142,6 +142,11 @@ function App() {
           </div>
         )}
       </div>
+      <footer className="footer">
+        Created by Austin Song
+        <br/>
+        <a href="https://github.com/StinCodes/nba-stat-search">Github Repository</a>
+      </footer>
     </div>
   );
 }

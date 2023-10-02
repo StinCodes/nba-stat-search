@@ -5,7 +5,7 @@
   justify-content: flex-start; /*align at the top */
   min-height: 100vh; /* container takes up full viewport*/
   margin: 0;
-  padding: 20px;
+  padding: 25px;
   background-color: gray;
 }
 
@@ -34,10 +34,10 @@
 }
 
 .statCard{
-  background-color: #ffa54f	;
-  border: 1px solid black;
+  background-color: #fc773a;
+  border: 2px solid black;
   border-radius: 5px;
-  padding: 20px;
+  padding: 25px;
   margin: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -45,5 +45,19 @@
 .gridItem{
   padding: 7px;
   border: 2px solid black;
-  background-color: #fc7446;
+  background-color: white;
+}
+
+.footer{
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  font-weight: bold;
 }
