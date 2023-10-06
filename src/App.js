@@ -85,6 +85,7 @@ function App() {
         className="logo"
       />
       <br />
+      <h3 className="instructions">Welcome to NBA Stat Search! Please enter the player's full name into the search bar below!</h3>
       <form onSubmit={handleSubmit} className="playerForm">
         <label>
           Name:
