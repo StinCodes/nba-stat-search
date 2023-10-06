@@ -28,12 +28,14 @@ function App() {
 
   const handleChange = (e) => {
     //player name needs to have underscore instead of space
-    const replace = e.target.value.split(" ").join("_");
-    if (replace.length > 0) {
-      setPlayerName(replace);
-    } else {
-      alert("Please enter player's name");
-    }
+    // const replace = e.target.value.split(" ").join("_");
+    // if (replace.length > 0) {
+    //   setPlayerName(replace);
+    // } else {
+    //   alert("Please enter player's name");
+    // }
+    const newName = e.target.value;
+    setPlayerName(newName);
   };
 
   // useEffect(() => {
