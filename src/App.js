@@ -79,6 +79,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>NBA Stat Search</h1>
       <img
         src="https://www.freelogodesign.org/manager/logos/732b1f3f663d470e99b9b993847f4def/download/logo_free"
         alt="nbastatsearchlogo"
